@@ -81,22 +81,6 @@ class SignUpForm extends Component {
           </div>
 
           <div className="formField">
-            <label className="formFieldCheckboxLabel">
-              <input
-                className="formFieldCheckbox"
-                type="checkbox"
-                name="hasAgreed"
-                value={this.state.hasAgreed}
-                onChange={this.handleChange}
-              />{" "}
-              I agree all statements in{" "}
-              <a href="null" className="formFieldTermsLink">
-                terms of service
-              </a>
-            </label>
-          </div>
-
-          <div className="formField">
             <button className="formFieldButton">Sign Up</button>{" "}
             <Link to="/sign-in" className="formFieldLink">
               I'm already member
