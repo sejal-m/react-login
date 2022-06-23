@@ -1,42 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-class SignInForm extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      email: "",
-      password: ""
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    let target = event.target;
-    let value = target.type === "checkbox" ? target.checked : target.value;
-    let name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-
-    console.log("The form was submitted with the following data:");
-    console.log(this.state);
-  }
-
-  render() {
-    return (
-      <div className="formCenter">
-        <form className="formFields" onSubmit={this.handleSubmit}>
+export default function SignInForm () {
+  return (
+    <div className="formCenter">
+        <form className="formFields">
           <div className="formField">
-            <label className="formFieldLabel" htmlFor="email">
+            <label className="formFieldLabel">
               E-Mail Address
             </label>
             <input
@@ -45,8 +15,6 @@ class SignInForm extends Component {
               className="formFieldInput"
               placeholder="Enter your email"
               name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
             />
           </div>
 
@@ -60,8 +28,6 @@ class SignInForm extends Component {
               className="formFieldInput"
               placeholder="Enter your password"
               name="password"
-              value={this.state.password}
-              onChange={this.handleChange}
             />
           </div>
 
@@ -74,7 +40,5 @@ class SignInForm extends Component {
         </form>
       </div>
     );
-  }
 }
 
-export default SignInForm;
